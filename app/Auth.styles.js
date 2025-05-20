@@ -8,6 +8,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    returnButtonContainer:{
+        position: 'absolute',
+        top: 20,
+        left: 20,
+        zIndex: 1,
+    },
     logo: {
         width: width * 0.7,
         height: width * 0.65,
@@ -47,17 +53,32 @@ const styles = StyleSheet.create({
         color: 'white', 
         fontSize: 14,
     },
-    linkContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
+    forgotContainer: {
         width: width * 0.8,
         marginVertical: 10,
     },
-    links: {
+    forgotLink: {
         color: 'white',
         fontSize: 14,
         textDecorationLine: 'underline',
     },
+    authContainer: {
+        width: width * 0.8,
+        marginVertical: 10,
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    authText: {
+        color: 'white',
+        fontSize: 14,
+    },
+    authLink: {
+        color: '#C01010',
+        fontSize: 14,
+        textDecorationLine: 'underline',
+        fontStyle:'italic',
+    },
+    
     divider: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -78,6 +99,7 @@ const styles = StyleSheet.create({
         height: 100,
         resizeMode: 'cover',
         marginBottom: -5,
+        pointerEvents:"none",
     },
 });
 

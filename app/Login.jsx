@@ -1,29 +1,41 @@
 import { Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native'
-import { Link } from 'expo-router'
+import { Link, useRouter } from 'expo-router'
 import React, { useState } from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
+import ReturnIcon from '../assets/return.svg'
+import GoogleIcon from '../assets/social_media_icons/google_icon.svg'
+import AppleIcon from '../assets/social_media_icons/apple_icon.svg'
+import FbIcon from '../assets/social_media_icons/fb_icon.svg'
 import Wave01 from '../assets/wave_01.png'
-import styles from './Login.styles.js'
+import styles from './Auth.styles.js'
 
 
-const Login = ({FbIcon, GoogleIcon, AppleIcon}) => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
   
   return (
     <View style={{ flex: 1, position: 'relative' }}>
         <LinearGradient
             colors={['#fff', '#f8d1c9','#f39281','#ec472c']} 
-            //'#fbf6f3' extra color for white/grey
             style={{flex:1}}
         >
             {/* Wave */}
-            <Image source={Wave01} style={styles.wave} pointerEvents="none"/>
+            <Image source={Wave01} style={styles.wave}/>
             <KeyboardAvoidingView
                 style={{ flex: 1, width: '100%', alignItems: 'center', justifyContent: 'center' }}
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
                 keyboardVerticalOffset={0}
             >
+
+            {/* Back Button */}
+            <View style={styles.returnButtonContainer}>
+                <TouchableOpacity onPress={() => router.push('./EmergencyButton')}>
+                    <ReturnIcon style={styles.returnButton}/>
+                </TouchableOpacity>
+            </View>
+            
 
                 {/* Main container */}
                 <View style={styles.container}>
@@ -67,10 +79,11 @@ const Login = ({FbIcon, GoogleIcon, AppleIcon}) => {
                     </TouchableOpacity>
                 
                     {/* Bottom part */}
-                    <View style={styles.linkContainer}>
-                        <Link href="/forgot" style={styles.links}>Forgot Password?</Link>
-                        <Link href="/Signup" style={styles.links}>Create an account</Link>
+                    <View style={styles.forgotContainer}><Link href="/forgot" style={styles.forgotLink}>Forgot Password?</Link></View>
+                    <View style={styles.authContainer}>
+                        <Text style={styles.authText}>Don't have an account? </Text><Link href="/Signup" style={styles.authLink}>Sign Up</Link>
                     </View>
+
 
                     {/* Divider */}
                     <View style={styles.divider}>
