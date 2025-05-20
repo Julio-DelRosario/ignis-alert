@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "learningreact",
     "name": "learning-react-native",
     "slug": "learning-react-native",
     "version": "1.0.0",
@@ -23,7 +24,10 @@
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/logo.png"
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
