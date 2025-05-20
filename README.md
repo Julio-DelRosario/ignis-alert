@@ -22,6 +22,7 @@ This is a React Native project set up using Expo. Follow the steps below to clon
 ```bash
 git clone https://https://github.com/Julio-DelRosario/ignis-alert.git
 ```
+>Or you can clone the repo via Github desktop
 
 2. **Install dependencies**
 
